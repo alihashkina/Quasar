@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/ic_back_btnsh"
+    tools:context=".fragment.application.CreatingApplicationDialog">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:paddingBottom="37dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtCreatingApplicationDialogBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/ic_back"
+                android:textSize="18sp"
+                android:text="Назад" />
+
+            <TextView
+                android:id="@+id/txtCreatingApplicationDialogCreate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                android:textStyle="bold"
+                android:text="Создание заявки" />
+
+            <TextView
+                android:id="@+id/txtCreatingApplicationDialogEquipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="left"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:text="Оборудование" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_back_edit_text">
+
+                <Spinner
+                    android:id="@+id/spinnerCreatingApplicationDialogApplication"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="28dp"
+                    android:layout_marginBottom="20dp"
+                    android:entries="@array/Applications"
+                    android:paddingStart="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/ic_qr"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/txtCreatingApplicationDialogProblem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="left"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:text="Опишите проблему" />
+
+            <EditText
+                android:id="@+id/txtCreatingApplicationDialogComm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:textSize="18sp"
+                android:paddingStart="20dp"
+                android:background="@drawable/ic_back_edit_text"
+                android:inputType="textPersonName"
+                android:hint="Комментарий..."
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/btnCreatingApplicationDialogCreateApplication"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_create_application_back"
+                android:layout_marginTop="45dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:text="Создать заявку" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

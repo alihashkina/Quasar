@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.login.Recovery">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtRecoveryBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/ic_back"
+                    android:textSize="18sp"
+                    android:text="Назад" />
+
+                <ImageView
+                    android:id="@+id/ingRecoveryQuasarLogo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_quasar_logo" />
+
+                <TextView
+                    android:id="@+id/txtRecoveryRestoringAccess"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="21sp"
+                    android:text="Восстановление доступов" />
+
+                <TextView
+                    android:id="@+id/txtRecoverySpecifyEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/grey"
+                    android:textSize="18sp"
+                    android:text="Укажите электронный адрес, который Вы оставляли при покупке оборудования и мы отправим письмо с кодом на почту." />
+
+                <EditText
+                    android:id="@+id/txtRecoveryEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="20dp"
+                    android:background="@drawable/ic_back_edit_text"
+                    android:layout_marginTop="20dp"
+                    android:textSize="18sp"
+                    android:hint="Введите email"
+                    android:textColorHint="@color/black"/>
+
+                <TextView
+                    android:id="@+id/btnRecoverySendTheCodeToTheMail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/ic_back_btn_grey"
+                    android:text="Отправить код на почту" />
+
+                <TextView
+                    android:id="@+id/txtRecoveryTermsOfUse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/grey"
+                    android:text="Нажав на кнопку “Войти в систему”, вы соглашаетесь с правилами использования приложения." />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+</layout>

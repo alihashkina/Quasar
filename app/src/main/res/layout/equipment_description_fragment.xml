@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.equipment.EquipmentDescription">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/txtEquipmentDescriptionDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:text="Описание оборудования" />
+
+            <TextView
+                android:id="@+id/txtEquipmentDescriptionDescriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginTop="11dp"
+                android:textColor="@color/grey"
+                android:text="СКЗИ Квазар-100 из состава комплекса «Квазар» позволяют организовать защиту высокоскоростного канала 100 Гбит/с между территориально разнесёнными центрами обработки данных, различными филиалами организации" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

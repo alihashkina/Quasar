@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.settingprofile.AboutTheApp">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_marginBottom="30dp"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtAboutTheAppBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/ic_back"
+                    android:textSize="18sp"
+                    android:text="Назад" />
+
+                <ImageView
+                    android:id="@+id/imgAboutTheAppBackQuasarlogo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_quasar_logo" />
+
+                <TextView
+                    android:id="@+id/txtAboutTheAppTheQuasarApplication"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="21sp"
+                    android:text="Приложение Квазар" />
+
+                <TextView
+                    android:id="@+id/txtAboutTheAppManufacturerOfTheComplex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/grey"
+                    android:textSize="18sp"
+                    android:text="Производителем комплекса средств криптографической защиты информации «Квазар» является компания «Системы Практической Безопасности» - российский разработчик и производитель средств криптографической защиты информации (СКЗИ) высокого класса." />
+
+                <TextView
+                    android:id="@+id/txtAboutTheAppApplicationVersion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:text="Версия приложения" />
+
+                <TextView
+                    android:id="@+id/txtAboutTheAppApplicationVersionInt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/grey"
+                    android:textSize="15sp"
+                    android:text="0.0.1" />
+
+            </LinearLayout>
+        </ScrollView>
+
+
+</layout>

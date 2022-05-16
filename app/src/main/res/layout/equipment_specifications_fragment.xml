@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.equipment.EquipmentSpecifications">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/txtEquipmentSpecificationsClientIntrf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:text="Клиентский интерфейс (CLIENT)" />
+
+            <TextView
+                android:id="@+id/txtEquipmentSpecificationsClientIntrfText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/grey"
+                android:text="100Gbit Ethernet (модуль QSFP28)" />
+
+            <TextView
+                android:id="@+id/txtEquipmentSpecificationsLinIntrf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:text="Линейный интерфейс (L1)" />
+
+            <TextView
+                android:id="@+id/txtEquipmentSpecificationsLinIntrfText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/grey"
+                android:text="OTU4 модуль CFP2" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

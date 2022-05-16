@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.equipment.Equipment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_marginBottom="30dp"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtEquipmentBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:drawableLeft="@drawable/ic_back"
+                android:textSize="18sp"
+                android:text="Назад" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerEquipment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="14dp"/>
+
+            <TextView
+                android:id="@+id/txtEquipmentEquipmentWithTp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="19dp"
+                android:gravity="center"
+                android:background="@drawable/ic_eq_with_tp"
+                android:text="Оборудование с тех. поддержкой" />
+
+            <TextView
+                android:id="@+id/txtEquipmentDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:text="Дата выпуска / Дата поставки" />
+
+            <TextView
+                android:id="@+id/txtEquipmentDateText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textSize="15sp"
+                android:textColor="@color/grey"
+                android:background="@drawable/ic_back_line_grey"
+                android:text="25.05.2022  · 25.07.2022" />
+
+            <TextView
+                android:id="@+id/txtEquipmentTerm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:text="Срок окончания гарантии" />
+
+            <TextView
+                android:id="@+id/txtEquipmentTermText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textSize="15sp"
+                android:textColor="@color/grey"
+                android:background="@drawable/ic_back_line_grey"
+                android:text="25.10.2022" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabEquipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginTop="19dp"
+                android:background="@drawable/ic_tab_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabGravity="fill"
+                app:tabIndicator="@drawable/ic_tab_ind"
+                app:tabIndicatorAnimationMode="linear"
+                app:tabIndicatorColor="@color/white"
+                app:tabIndicatorGravity="center"
+                app:tabSelectedTextColor="@color/black"
+                app:tabTextColor="@color/black">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Описание"
+                    android:textSize="13sp"
+                    app:tabTextColor="@color/black" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Характер."
+                    android:textSize="13sp"
+                    app:tabTextColor="@color/black" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Сертификаты"
+                    android:textSize="13sp"
+                    app:tabTextColor="@color/black" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerEquipment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="19dp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
