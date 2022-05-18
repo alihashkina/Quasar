@@ -5,6 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragment.settingprofile.GeneralPage">
 
+    <data>
+        <variable name="GeneralPage" type="com.bignerdranch.android.quasar.fragment.settingprofile.GeneralPage"/>
+    </data>
 
         <ScrollView
             android:layout_width="match_parent"

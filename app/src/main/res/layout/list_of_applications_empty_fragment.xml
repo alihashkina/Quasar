@@ -5,6 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragment.application.ListOfApplicationsEmpty">
 
+    <data>
+        <variable name="ListOfApplicationsEmpty" type="com.bignerdranch.android.quasar.fragment.application.ListOfApplicationsEmpty"/>
+    </data>
 
     <ScrollView
         android:layout_width="match_parent"

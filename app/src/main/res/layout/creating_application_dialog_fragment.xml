@@ -6,6 +6,9 @@
     android:background="@drawable/ic_back_btnsh"
     tools:context=".fragment.application.CreatingApplicationDialog">
 
+    <data>
+        <variable name="CreatingApplicationDialog" type="com.bignerdranch.android.quasar.fragment.application.CreatingApplicationDialog"/>
+    </data>
 
     <ScrollView
         android:layout_width="match_parent"

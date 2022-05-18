@@ -6,6 +6,9 @@
     android:background="@drawable/ic_back_btnsh"
     tools:context=".fragment.application.ApplicationEdit">
 
+    <data>
+        <variable name="ApplicationEdit" type="com.bignerdranch.android.quasar.fragment.application.ApplicationEdit"/>
+    </data>
 
     <ScrollView
         android:layout_width="match_parent"

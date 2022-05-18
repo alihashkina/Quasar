@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragment.login.RecoveryCode">
 
+    <data>
+        <variable name="RecoveryCode" type="com.bignerdranch.android.quasar.fragment.login.RecoveryCode"/>
+    </data>
 
         <ScrollView
             android:layout_width="match_parent"

@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragment.application.ApplicationChat">
 
-
+    <data>
+        <variable name="ApplicationChat" type="com.bignerdranch.android.quasar.fragment.application.ApplicationChat"/>
+    </data>
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,6 +24,7 @@
                     android:drawableLeft="@drawable/ic_back"
                     android:gravity="center_vertical"
                     android:paddingBottom="24dp"
+                    android:layout_marginLeft="20dp"
                   android:paddingTop="28dp"
                     android:text="Назад"
                     android:textColor="@color/black"

@@ -6,7 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import com.bignerdranch.android.quasar.R
+import com.bignerdranch.android.quasar.databinding.AuthorizationFragmentBinding
 import com.bignerdranch.android.quasar.ui.viewmodel.login.AuthorizationViewModel
 
 class Authorization : Fragment() {
@@ -16,12 +20,16 @@ class Authorization : Fragment() {
     }
 
     private lateinit var viewModel: AuthorizationViewModel
+    lateinit var bindingAuthorization: AuthorizationFragmentBinding
+  //  var txtAuthorizationLogin = bindingAuthorization.txtAuthorizationLogin
+   var btnAuthorizationLogin = bindingAuthorization.btnAuthorizationLogin
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.authorization_fragment, container, false)
+        bindingAuthorization = DataBindingUtil.inflate(inflater,R.layout.authorization_fragment,container,false)
+        return bindingAuthorization.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -30,4 +38,11 @@ class Authorization : Fragment() {
         // TODO: Use the ViewModel
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        btnAuthorizationLogin.setOnClickListener{
+            findNavController().navigate(R.id.menu)
+        }
+
+    }
 }

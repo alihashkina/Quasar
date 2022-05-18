@@ -5,6 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragment.application.Application">
 
+    <data>
+        <variable name="Application" type="com.bignerdranch.android.quasar.fragment.application.Application"/>
+    </data>
+
 
     <ScrollView
         android:layout_width="match_parent"

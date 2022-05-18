@@ -5,6 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragment.equipment.EquipmentDescription">
 
+    <data>
+        <variable name="EquipmentDescription" type="com.bignerdranch.android.quasar.fragment.equipment.EquipmentDescription"/>
+    </data>
 
     <ScrollView
         android:layout_width="match_parent"
