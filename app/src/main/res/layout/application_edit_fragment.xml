@@ -23,7 +23,7 @@
 
             <TextView
                 android:id="@+id/txtApplicationEditBack"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:gravity="center_vertical"
@@ -59,7 +59,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:background="@drawable/ic_back_edit_text">
+                android:background="@drawable/ic_back_edit_text_grey">
 
                 <Spinner
                     android:id="@+id/spinnerApplicationEditApplication"
@@ -106,7 +106,7 @@
                 android:layout_marginTop="13dp"
                 android:textSize="18sp"
                 android:paddingStart="20dp"
-                android:background="@drawable/ic_back_edit_text"
+                android:background="@drawable/ic_back_edit_text_grey"
                 android:inputType="textPersonName"
                 android:hint="Комментарий..."
                 android:textColorHint="@color/grey"

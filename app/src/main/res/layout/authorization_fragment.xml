@@ -1,115 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-tools:context=".fragment.login.Authorization">
+    tools:context=".fragment.login.Authorization">
 
     <data>
-        <variable name="Authorization" type="com.bignerdranch.android.quasar.fragment.login.Authorization"/>
+        <!--        <variable name="Authorization" type="com.bignerdranch.android.quasar.fragment.login.Authorization"/>-->
+        <!--        <variable name="ttxtAuthorizationLogInToTheSystem" type="String"/>-->
+        <variable
+            name="viewModelAuthorization"
+            type="com.bignerdranch.android.quasar.ui.viewmodel.login.AuthorizationViewModel" />
     </data>
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:layout_marginBottom="30dp"
-            android:layout_margin="20dp"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imgAuthorizationQuasarLogo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_quasar_logo" />
-
-            <TextView
-                android:id="@+id/txtAuthorizationLogInToTheSystem"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="21sp"
-                android:text="Вход в систему" />
+                android:layout_height="0dp"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@color/white"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/txtAuthorizationWhenBuyingEquipment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/grey"
-                android:textSize="18sp"
-                android:text="При покупке оборудования Вы получили уникальный логин и пароль для связи с технической поддержкой." />
+                <ImageView
+                    android:id="@+id/imgAuthorizationQuasarLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_quasar_logo" />
 
-            <EditText
-                android:id="@+id/txtAuthorizationLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:paddingStart="20dp"
-                android:background="@drawable/ic_back_edit_text"
-                android:layout_marginTop="20dp"
-                android:textSize="18sp"
-                android:inputType="textPersonName"
-                android:hint="Введите логин"
-                android:textColorHint="@color/black"/>
+                <TextView
+                    android:id="@+id/txtAuthorizationLogInToTheSystem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Вход в систему"
+                    android:textColor="@color/black"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/txtAuthorizationPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:paddingStart="20dp"
-                android:background="@drawable/ic_back_edit_text"
-                android:layout_marginTop="20dp"
-                android:textSize="18sp"
-                android:hint="Введите пароль"
-                android:textColorHint="@color/black"
-                android:inputType="textPassword" />
+                <TextView
+                    android:id="@+id/txtAuthorizationWhenBuyingEquipment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="5sp"
+                    android:text="При покупке оборудования Вы получили уникальный логин и пароль для связи с технической поддержкой."
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/btnAuthorizationLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:background="@drawable/ic_back_btn_grey"
-                android:text="Войти" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/txtAuthorizationYouDontHaveAccess"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:textColor="@color/blue"
-                android:text="У вас нет доступов?" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/txtAuthorizationTermsOfUse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:textSize="15sp"
-                android:textColor="@color/grey"
-                android:text="Нажав на кнопку “Войти в систему”, вы соглашаетесь с правилами использования приложения." />
+                <EditText
+                    android:id="@+id/txtAuthorizationLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/ic_back_edit_text_grey"
+                    android:ems="10"
+                    android:maxLength="30"
+                    android:hint="Введите логин"
+                    android:inputType="textPersonName"
+                    android:paddingStart="20dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txtAuthorizationLoginError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/red"
+                    android:text="не правильно" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:background="@drawable/ic_back_edit_text_grey"
+                    android:paddingStart="20dp" >
+
+                    <EditText
+                        android:id="@+id/txtAuthorizationPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:ems="10"
+                        android:hint="Введите пароль"
+                        android:inputType="textPassword"
+                        android:maxLength="30"
+
+                        android:textColorHint="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/imgAuthorizationPassword"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <ImageView
+                        android:id="@+id/imgAuthorizationPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_password_no"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.517" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/txtAuthorizationPasswordError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/red"
+                    android:text="не правильно" />
+
+                <TextView
+                    android:id="@+id/btnAuthorizationLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/ic_back_btn_grey"
+                    android:gravity="center"
+                    android:text="Войти"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txtAuthorizationYouDontHaveAccess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:layout_gravity="center"
+                    android:text="У вас нет доступов?"
+                    android:textColor="@color/blue"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txtAuthorizationTermsOfUse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:lineSpacingExtra="4sp"
+                    android:text="Нажав на кнопку “Войти в систему”, вы соглашаетесь с правилами использования приложения."
+                    android:textColor="@color/grey"
+                    android:textSize="15sp" />
 
 
-
-        </LinearLayout>
-    </ScrollView>
-
-
-
-
+            </LinearLayout>
+        </ScrollView>
 
 </layout>

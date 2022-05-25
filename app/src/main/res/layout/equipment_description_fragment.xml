@@ -34,6 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
+                android:lineSpacingExtra="4sp"
                 android:layout_marginTop="11dp"
                 android:textColor="@color/grey"
                 android:text="СКЗИ Квазар-100 из состава комплекса «Квазар» позволяют организовать защиту высокоскоростного канала 100 Гбит/с между территориально разнесёнными центрами обработки данных, различными филиалами организации" />

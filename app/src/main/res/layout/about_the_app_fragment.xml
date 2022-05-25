@@ -22,7 +22,7 @@
 
                 <TextView
                     android:id="@+id/txtAboutTheAppBack"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
@@ -55,6 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/grey"
+                    android:lineSpacingExtra="5sp"
                     android:textSize="18sp"
                     android:text="Производителем комплекса средств криптографической защиты информации «Квазар» является компания «Системы Практической Безопасности» - российский разработчик и производитель средств криптографической защиты информации (СКЗИ) высокого класса." />
 

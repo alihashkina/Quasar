@@ -72,6 +72,7 @@
                 android:textColor="@color/grey"
                 android:layout_marginTop="5dp"
                 android:textSize="18sp"
+                android:lineSpacingExtra="5sp"
                 android:text="Создавайте заявку на поддержку и специалист свяжется с Вами." />
 
             <androidx.constraintlayout.widget.ConstraintLayout

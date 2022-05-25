@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
 import com.bignerdranch.android.quasar.R
 import com.bignerdranch.android.quasar.ui.viewmodel.application.ListOfApplicationsEmptyViewModel
@@ -18,6 +20,7 @@ class ListOfApplicationsEmpty : Fragment() {
 
     private lateinit var emptyViewModel: ListOfApplicationsEmptyViewModel
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,6 +32,7 @@ class ListOfApplicationsEmpty : Fragment() {
         super.onActivityCreated(savedInstanceState)
         emptyViewModel = ViewModelProvider(this).get(ListOfApplicationsEmptyViewModel::class.java)
         // TODO: Use the ViewModel
-    }
 
+
+    }
 }

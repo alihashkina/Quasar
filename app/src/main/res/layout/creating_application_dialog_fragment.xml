@@ -23,7 +23,7 @@
 
             <TextView
                 android:id="@+id/txtCreatingApplicationDialogBack"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:gravity="center_vertical"
@@ -59,7 +59,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:background="@drawable/ic_back_edit_text">
+                android:background="@drawable/ic_back_edit_text_grey">
 
                 <Spinner
                     android:id="@+id/spinnerCreatingApplicationDialogApplication"
@@ -71,13 +71,13 @@
                     android:entries="@array/Applications"
                     android:paddingStart="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                    app:layout_constraintEnd_toStartOf="@+id/imgCreatingApplicationDialogQR"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imgCreatingApplicationDialogQR"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -106,7 +106,7 @@
                 android:layout_marginTop="13dp"
                 android:textSize="18sp"
                 android:paddingStart="20dp"
-                android:background="@drawable/ic_back_edit_text"
+                android:background="@drawable/ic_back_edit_text_grey"
                 android:inputType="textPersonName"
                 android:hint="Комментарий..."
                 android:textColorHint="@color/grey"
