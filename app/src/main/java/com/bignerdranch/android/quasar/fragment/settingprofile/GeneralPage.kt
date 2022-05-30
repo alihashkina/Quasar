@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.bignerdranch.android.quasar.R
+import com.bignerdranch.android.quasar.databinding.GeneralPageFragmentBinding
 import com.bignerdranch.android.quasar.ui.viewmodel.settingprofile.GeneralPageViewModel
 
 class GeneralPage : Fragment() {
@@ -18,12 +20,14 @@ class GeneralPage : Fragment() {
     }
 
     private lateinit var viewModel: GeneralPageViewModel
+    lateinit var bindingGeneralPage: GeneralPageFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.general_page_fragment, container, false)
+        bindingGeneralPage= DataBindingUtil.inflate(inflater, R.layout.general_page_fragment,container,false)
+        return bindingGeneralPage.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

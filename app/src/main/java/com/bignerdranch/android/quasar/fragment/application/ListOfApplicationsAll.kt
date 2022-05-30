@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.bignerdranch.android.quasar.R
+import com.bignerdranch.android.quasar.databinding.ListOfApplicationsAllFragmentBinding
 import com.bignerdranch.android.quasar.ui.viewmodel.application.ListOfApplicationsAllViewModel
 
 class ListOfApplicationsAll : Fragment() {
@@ -18,20 +20,31 @@ class ListOfApplicationsAll : Fragment() {
     }
 
     private lateinit var viewModel: ListOfApplicationsAllViewModel
-
+lateinit var bindingListOfApplicationsAll: ListOfApplicationsAllFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.list_of_applications_all_fragment, container, false)
+        bindingListOfApplicationsAll= DataBindingUtil.inflate(inflater, R.layout.list_of_applications_all_fragment,container,false)
+        return bindingListOfApplicationsAll.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ListOfApplicationsAllViewModel::class.java)
         // TODO: Use the ViewModel
+bindingListOfApplicationsAll.imgApplicationsAllPlus.setOnClickListener{
+    findNavController().navigate(R.id.application)
+}
 
+        bindingListOfApplicationsAll.imgApplicationsAllPlus.setOnClickListener{
+            findNavController().navigate(R.id.creatingApplicationDialog2)
+        }
+
+        bindingListOfApplicationsAll.textView7.setOnClickListener{
+            findNavController().navigate(R.id.application2)
+        }
     }
 
 }

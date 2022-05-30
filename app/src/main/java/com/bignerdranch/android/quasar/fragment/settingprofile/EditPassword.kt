@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.bignerdranch.android.quasar.R
+import com.bignerdranch.android.quasar.databinding.EditPasswordFragmentBinding
 import com.bignerdranch.android.quasar.ui.viewmodel.settingprofile.EditPasswordViewModel
 
 class EditPassword : Fragment() {
@@ -18,19 +20,22 @@ class EditPassword : Fragment() {
     }
 
     private lateinit var viewModel: EditPasswordViewModel
+    lateinit var bindingEditPassword: EditPasswordFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.edit_password_fragment, container, false)
+        bindingEditPassword= DataBindingUtil.inflate(inflater, R.layout.edit_password_fragment,container,false)
+        return bindingEditPassword.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(EditPasswordViewModel::class.java)
-        // TODO: Use the ViewModel
-
+        bindingEditPassword.txtEditPasswordBack.setOnClickListener{
+            findNavController().navigate(R.id.generalPage2)
+        }
     }
 
 }

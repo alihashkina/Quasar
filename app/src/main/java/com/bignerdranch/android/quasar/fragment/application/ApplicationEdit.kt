@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.bignerdranch.android.quasar.R
+import com.bignerdranch.android.quasar.databinding.ApplicationEditFragmentBinding
 import com.bignerdranch.android.quasar.ui.viewmodel.application.ApplicationEditViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -18,18 +20,22 @@ class ApplicationEdit : BottomSheetDialogFragment() {
     }
 
     private lateinit var viewModel: ApplicationEditViewModel
+lateinit var bindingApplicationEdit: ApplicationEditFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.application_edit_fragment, container, false)
+        bindingApplicationEdit= DataBindingUtil.inflate(inflater, R.layout.application_edit_fragment,container,false)
+        return bindingApplicationEdit.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ApplicationEditViewModel::class.java)
-        // TODO: Use the ViewModel
+        bindingApplicationEdit.txtApplicationEditBack.setOnClickListener{
+findNavController().navigate(R.id.application)
+        }
 
     }
 

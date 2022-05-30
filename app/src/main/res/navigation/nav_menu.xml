@@ -20,5 +20,25 @@
         android:name="com.bignerdranch.android.quasar.fragment.settingprofile.GeneralPage"
         android:label="general_page_fragment"
         tools:layout="@layout/general_page_fragment" />
+    <dialog
+        android:id="@+id/creatingApplicationDialog2"
+        android:name="com.bignerdranch.android.quasar.fragment.application.CreatingApplicationDialog"
+        android:label="creating_application_dialog_fragment"
+        tools:layout="@layout/creating_application_dialog_fragment" />
+    <fragment
+        android:id="@+id/QRScan2"
+        android:name="com.bignerdranch.android.quasar.fragment.application.QRScan"
+        android:label="q_r_scan_fragment"
+        tools:layout="@layout/q_r_scan_fragment" />
+    <fragment
+        android:id="@+id/listOfApplicationsAll2"
+        android:name="com.bignerdranch.android.quasar.fragment.application.ListOfApplicationsAll"
+        android:label="list_of_applications_all_fragment"
+        tools:layout="@layout/list_of_applications_all_fragment" />
+    <fragment
+        android:id="@+id/application2"
+        android:name="com.bignerdranch.android.quasar.fragment.application.Application"
+        android:label="application_fragment"
+        tools:layout="@layout/application_fragment" />
 
 </navigation>

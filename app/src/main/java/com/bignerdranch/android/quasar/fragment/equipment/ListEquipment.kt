@@ -7,8 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.bignerdranch.android.quasar.R
+import com.bignerdranch.android.quasar.databinding.ListEquipmentFragmentBinding
+import com.bignerdranch.android.quasar.databinding.ListEquipmentFragmentBindingImpl
 import com.bignerdranch.android.quasar.ui.viewmodel.equipment.ListEquipmentViewModel
 
 class ListEquipment : Fragment() {
@@ -18,12 +21,14 @@ class ListEquipment : Fragment() {
     }
 
     private lateinit var viewModel: ListEquipmentViewModel
+    lateinit var bindingListEquipment: ListEquipmentFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.list_equipment_fragment, container, false)
+        bindingListEquipment= DataBindingUtil.inflate(inflater, R.layout.list_equipment_fragment,container,false)
+        return bindingListEquipment.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

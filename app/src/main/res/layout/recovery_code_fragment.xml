@@ -67,11 +67,20 @@
                     android:ems="10"
                     android:inputType="textEmailAddress"
                     android:paddingStart="20dp"
+                    android:maxLength="30"
                     android:background="@drawable/ic_back_edit_text_grey"
                     android:layout_marginTop="20dp"
                     android:textSize="18sp"
                     android:hint="Введите код"
                     android:textColorHint="@color/black"/>
+
+                <TextView
+                    android:id="@+id/txtRecoveryCodeError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="не правильно"
+                    android:textColor="@color/red"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/btnRecoveryCodeLogInToTheSystem"

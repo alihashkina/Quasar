@@ -76,8 +76,9 @@
                     android:id="@+id/txtAuthorizationLoginError"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="не правильно"
                     android:textColor="@color/red"
-                    android:text="не правильно" />
+                    android:visibility="gone" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -123,8 +124,9 @@
                     android:id="@+id/txtAuthorizationPasswordError"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="не правильно"
                     android:textColor="@color/red"
-                    android:text="не правильно" />
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/btnAuthorizationLogin"

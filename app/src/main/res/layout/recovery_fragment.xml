@@ -73,15 +73,23 @@
                     android:textColorHint="@color/black"/>
 
                 <TextView
+                    android:id="@+id/txtRecoveryEmailError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="не правильно"
+                    android:textColor="@color/red"
+                    android:visibility="gone" />
+
+                <TextView
                     android:id="@+id/btnRecoverySendTheCodeToTheMail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
                     android:background="@drawable/ic_back_btn_grey"
-                    android:text="Отправить код на почту" />
+                    android:gravity="center"
+                    android:text="Отправить код на почту"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/txtRecoveryTermsOfUse"

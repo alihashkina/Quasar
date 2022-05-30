@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import com.bignerdranch.android.quasar.R
+import com.bignerdranch.android.quasar.databinding.EquipmentSpecificationsFragmentBinding
 import com.bignerdranch.android.quasar.ui.viewmodel.equipment.EquipmentSpecificationsViewModel
 
 class EquipmentSpecifications : Fragment() {
@@ -16,12 +18,14 @@ class EquipmentSpecifications : Fragment() {
     }
 
     private lateinit var viewModel: EquipmentSpecificationsViewModel
+lateinit var bindingEquipmentSpecifications: EquipmentSpecificationsFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.equipment_specifications_fragment, container, false)
+        bindingEquipmentSpecifications= DataBindingUtil.inflate(inflater, R.layout.equipment_specifications_fragment,container,false)
+        return bindingEquipmentSpecifications.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
