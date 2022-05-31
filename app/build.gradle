@@ -87,10 +87,20 @@ dependencies {
 //    implementation("androidx.navigation:navigation-fragment-ktx:2.4.2")
 //    implementation("androidx.navigation:navigation-ui-ktx:2.4.2")
 
-//Retrofit
+    // Retrofit
     implementation "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation 'com.squareup.okhttp3:okhttp:3.14.9'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.14.9'
+
+    //RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+//    //QR
+//    implementation 'me.dm7.barcodescanner:zbar:1.8.4'
+//    implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
+//
+//    //Image
+//    implementation 'com.squareup.picasso:picasso:2.71828'
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }

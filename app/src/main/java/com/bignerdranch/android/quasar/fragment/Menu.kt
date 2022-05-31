@@ -26,9 +26,9 @@ class Menu : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var menu = view.findViewById<BottomNavigationView>(R.id.menu)
-        var nav =
-            (childFragmentManager.findFragmentById(R.id.containerMenu) as NavHostFragment).navController
-        NavigationUI.setupWithNavController(menu, nav)
+//        var menu = view.findViewById<BottomNavigationView>(R.id.menu)
+//        var nav =
+//            (childFragmentManager.findFragmentById(R.id.containerMenu) as NavHostFragment).navController
+//        NavigationUI.setupWithNavController(menu, nav)
     }
 }

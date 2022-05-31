@@ -33,10 +33,11 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
-        var menu = view!!.findViewById<BottomNavigationView>(R.id.main_bottom_menu)
-        var navC =
-            (childFragmentManager.findFragmentById(R.id.containerViewMain) as NavHostFragment).navController
-        NavigationUI.setupWithNavController(menu, navC)
+
+//        var menu = view!!.findViewById<BottomNavigationView>(R.id.main_bottom_menu)
+//        var navC =
+//            (childFragmentManager.findFragmentById(R.id.containerViewMain) as NavHostFragment).navController
+//        NavigationUI.setupWithNavController(menu, navC)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

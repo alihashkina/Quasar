@@ -34,11 +34,62 @@
                 android:text="Назад" />
 
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerApplication"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constrApplication"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="39dp"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="39dp"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/txtApplicationNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:text="9XC8P5D23BL"
+                    app:layout_constraintBottom_toTopOf="@+id/txtApplicationModel"
+                    app:layout_constraintEnd_toStartOf="@+id/btnApplicationUp"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/imgApplicationEquipment"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.003" />
+
+                <TextView
+                    android:id="@+id/txtApplicationModel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Квазар 100 · ВМШ - ТР"
+                    android:textSize="15sp"
+                    android:textColor="@color/grey"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/txtApplicationNumber"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/txtApplicationNumber" />
+
+                <ImageView
+                    android:id="@+id/btnApplicationUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/ic_up"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imgApplicationEquipment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/ic_quasar_logo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <TextView
                 android:id="@+id/txtApplicationDescriptionProblem"

@@ -71,13 +71,13 @@
                     android:entries="@array/ApplicationsSave"
                     android:paddingStart="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                    app:layout_constraintEnd_toStartOf="@+id/imgApplicationEditQR"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imgApplicationEditQR"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -107,7 +107,8 @@
                 android:textSize="18sp"
                 android:paddingStart="20dp"
                 android:background="@drawable/ic_back_edit_text_grey"
-                android:inputType="textPersonName"
+                android:inputType="textMultiLine"
+                android:lineSpacingExtra="5sp"
                 android:hint="Комментарий..."
                 android:textColorHint="@color/grey"
                 android:textColor="@color/black"/>
@@ -116,7 +117,7 @@
                 android:id="@+id/btnApplicationEditSave"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ic_create_application_back"
+                android:background="@drawable/ic_back_btn_blue"
                 android:layout_marginTop="45dp"
                 android:gravity="center"
                 android:textColor="@color/white"

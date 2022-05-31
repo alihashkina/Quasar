@@ -33,7 +33,14 @@ lateinit var bindingApplicationDelete: ApplicationDeleteFragmentBinding
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ApplicationDeleteViewModel::class.java)
-        // TODO: Use the ViewModel
+
+        bindingApplicationDelete.txtApplicationDeleteYes.setOnClickListener{
+            dismiss()
+        }
+
+        bindingApplicationDelete.txtApplicationDeleteNo.setOnClickListener{
+            dismiss()
+        }
     }
 
     override fun getTheme() = R.style.DeleteAppBottomSheetDialogTheme

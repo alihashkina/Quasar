@@ -6,8 +6,7 @@
         />
     <item
         android:id="@+id/listEquipment"
-        android:icon="@drawable/ic_menu_equipment"
-        />
+        android:icon="@drawable/ic_menu_equipment" />
     <item
         android:id="@+id/generalPage"
         android:icon="@drawable/ic_menu_setting"

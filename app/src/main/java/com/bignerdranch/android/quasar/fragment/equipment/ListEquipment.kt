@@ -5,10 +5,12 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
+import com.bignerdranch.android.quasar.MainActivity
 import com.bignerdranch.android.quasar.R
 import com.bignerdranch.android.quasar.databinding.ListEquipmentFragmentBinding
 import com.bignerdranch.android.quasar.databinding.ListEquipmentFragmentBindingImpl
@@ -34,7 +36,7 @@ class ListEquipment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ListEquipmentViewModel::class.java)
-        // TODO: Use the ViewModel
+        MainActivity.menu.visibility = VISIBLE
 
     }
 

@@ -8,13 +8,16 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
+import com.bignerdranch.android.quasar.MainActivity
 import com.bignerdranch.android.quasar.R
 import com.bignerdranch.android.quasar.databinding.AuthorizationFragmentBinding
 import com.bignerdranch.android.quasar.databinding.RecoveryFragmentBinding
+import com.bignerdranch.android.quasar.fragment.application.CreatingApplicationDialog
 import com.bignerdranch.android.quasar.ui.viewmodel.login.RecoveryViewModel
 
 class Recovery : Fragment() {
@@ -39,11 +42,12 @@ class Recovery : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(RecoveryViewModel::class.java)
+MainActivity.menu.visibility = GONE
 
         bindingRecovery.btnRecoverySendTheCodeToTheMail.setOnClickListener{
             viewModel.errorClickEmail(bindingRecovery.txtRecoveryEmail, bindingRecovery.txtRecoveryEmailError)
             if(RecoveryViewModel.trueFalseErrorEmail.contains("false")){
-                findNavController().navigate(R.id.recoveryCode)
+                requireActivity().supportFragmentManager.beginTransaction().replace(R.id.containerView, RecoveryCode.newInstance()).addToBackStack(null).commit()
             }
         }
 
@@ -52,7 +56,7 @@ class Recovery : Fragment() {
         }
 
         bindingRecovery.txtRecoveryBack.setOnClickListener{
-            findNavController().navigate(R.id.authorization)
+            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.containerView, Authorization.newInstance()).addToBackStack(null).commit()
         }
 
         bindingRecovery.txtRecoveryEmail.addTextChangedListener(object : TextWatcher {
