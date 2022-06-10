@@ -3,22 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Marina/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_dropdown_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Marina/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/aaa.xml" value="0.3828125" />
+        <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/back_spinner.xml" value="0.3828125" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/ic_back_edit_text.xml" value="0.3828125" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/ic_back_edit_text_grey.xml" value="0.2234375" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/ic_back_edit_text_red.xml" value="0.3828125" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/ic_back_white.xml" value="0.3828125" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/ic_create_application_back.xml" value="0.3828125" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/ic_grey_line_delete.xml" value="0.3828125" />
+        <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/ic_image_1__12_.xml" value="0.3828125" />
+        <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/ic_msg_text.xml" value="0.3828125" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/ic_password_no.xml" value="0.2234375" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/ic_password_yes.xml" value="0.2234375" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/ic_quasar_logo.xml" value="0.3828125" />
+        <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/ic_spinner_down.xml" value="0.2234375" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/ic_tab_back.xml" value="0.3828125" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/ic_tab_ind.xml" value="0.3828125" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/drawable/logo.xml" value="0.3828125" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/about_the_app_fragment.xml" value="0.36231884057971014" />
+        <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/activity_qr_scanner.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/activity_scanner.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/activity_splash_screen.xml" value="0.36231884057971014" />
-        <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/application_chat_fragment.xml" value="0.36231884057971014" />
+        <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/application_chat_fragment.xml" value="0.33" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/application_delete_fragment.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/application_edit_fragment.xml" value="0.2957427536231884" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/application_fragment.xml" value="0.2957427536231884" />
@@ -42,9 +50,11 @@
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/list_of_applications_empty_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/main_activity.xml" value="0.35733695652173914" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/main_fragment.xml" value="0.35733695652173914" />
+        <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/photo_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/q_r_scan_fragment.xml" value="0.33" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/recovery_code_fragment.xml" value="0.36231884057971014" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/recovery_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/spinner_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/layout/user_agreement_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/menu/menu_btn.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Marina/quasar/quasar/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2234375" />

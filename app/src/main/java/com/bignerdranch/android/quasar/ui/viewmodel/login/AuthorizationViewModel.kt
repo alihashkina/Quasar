@@ -3,6 +3,7 @@ package com.bignerdranch.android.quasar.ui.viewmodel.login
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -15,15 +16,24 @@ import android.view.View.VISIBLE
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.constraintlayout.motion.widget.Key.VISIBILITY
+import androidx.databinding.Bindable
 import androidx.databinding.BindingAdapter
+import androidx.databinding.adapters.TextViewBindingAdapter.getTextString
 import androidx.lifecycle.ViewModel
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.bignerdranch.android.quasar.R
 import com.bignerdranch.android.quasar.databinding.AuthorizationFragmentBinding
 import com.bignerdranch.android.quasar.fragment.MainFragment
+import com.bignerdranch.android.quasar.fragment.application.ListOfApplicationsEmpty
+import com.bignerdranch.android.quasar.fragment.login.Authorization
+import com.bignerdranch.android.quasar.retrofit.common.Common
+import com.bignerdranch.android.quasar.retrofit.model.Service
+import org.json.JSONObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.util.Base64
 
 class AuthorizationViewModel : ViewModel() {
 
@@ -31,6 +41,8 @@ class AuthorizationViewModel : ViewModel() {
         var flagDrawablePassword = true
         var trueFalseBackBtn = ""
         var trueFalseErrorLogin = ""
+        var tokenAuth: String = ""
+        var auth = 0
     }
 
     fun openNewTabWindowAuth(urls: String, context: Context) {
@@ -83,6 +95,7 @@ class AuthorizationViewModel : ViewModel() {
     }
 
     fun errorClickAuth(txtAuthorizationLogin: EditText, txtAuthorizationPassword: EditText, btnAuthorizationLogin: TextView, txtAuthorizationLoginError: TextView, txtAuthorizationPasswordError: TextView){
+        Log.i("logi", "3")
         var whitespace = " "
         var flagErrorClickLogin = "false"
         var flagErrorClickPassword = "false"
@@ -98,10 +111,11 @@ class AuthorizationViewModel : ViewModel() {
             txtAuthorizationPasswordError.visibility = VISIBLE
             txtAuthorizationPasswordError.text = "Введен недопустимый символ"
             flagErrorClickPassword = "true"
-        }else{
+        }else {
             txtAuthorizationPasswordError.visibility = GONE
             flagErrorClickPassword = "false"
         }
+
         if(txtAuthorizationLogin.text.toString() == ""){
             flagErrorClickLogin = "true"
         }
@@ -116,6 +130,39 @@ class AuthorizationViewModel : ViewModel() {
         }else{
             trueFalseErrorLogin = "false"
         }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun code(txtAuthorizationLogin: EditText, txtAuthorizationPassword: EditText) {
+        val loginPassword = "${txtAuthorizationLogin.text}:${txtAuthorizationPassword.text}"
+        val encodedString: String = Base64.getEncoder().encodeToString(loginPassword.toByteArray())
+         tokenAuth = "Basic ${encodedString}"
+        Log.i("encodedString", "${tokenAuth}")
+        Log.i("logi", "1")
+    }
+
+    fun task (txtAuthorizationPasswordError: TextView) {
+        Common.retrofitService.task("${tokenAuth}").enqueue(object: Callback<Service> {
+            override fun onResponse(call: Call<Service>, response: Response<Service>) {
+                Log.i("response.code()", "" + response.code())
+                auth = response.code()
+                Log.i("MyLogtask", "NOT ERROR AuthLogin" + response.body())
+            }
+            override fun onFailure(call: Call<Service>, t: Throwable) {
+                Log.i("MyLogtask", "ERROR AuthLogin" + t)
+            }
+        })
+    }
+
+    fun errorAuth(txtAuthorizationPasswordError: TextView){
+        if(auth in 500..504){
+            txtAuthorizationPasswordError.visibility = VISIBLE
+            txtAuthorizationPasswordError.text = "Нет соединения с сервером"
+        }else{
+            txtAuthorizationPasswordError.visibility = VISIBLE
+            txtAuthorizationPasswordError.text = "Неверный логин или пароль"
+        }
+
     }
 
 }

@@ -1,7 +1,7 @@
 package com.bignerdranch.android.quasar.retrofit.model
 
 data class Authorization (
-var Token: String,
-var DeviceType: String,
-var DeviceName: String
+val Token: String,
+val DeviceType: String,
+val DeviceName: String
         )

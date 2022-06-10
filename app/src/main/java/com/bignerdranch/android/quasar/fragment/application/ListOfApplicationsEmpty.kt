@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.fragment.findNavController
 import com.bignerdranch.android.quasar.MainActivity
 import com.bignerdranch.android.quasar.R
 import com.bignerdranch.android.quasar.databinding.ListOfApplicationsEmptyFragmentBinding
@@ -44,7 +43,6 @@ lateinit var bindingListOfApplicationsEmpty: ListOfApplicationsEmptyFragmentBind
         }
 
 bindingListOfApplicationsEmpty.imgApplicationsPlus.setOnClickListener{
-    //requireActivity().supportFragmentManager.beginTransaction().replace(R.id.containerView, CreatingApplicationDialog.newInstance()).addToBackStack(null).commit()
     CreatingApplicationDialog().show(fragmentManager!!, "d")
 }
     }

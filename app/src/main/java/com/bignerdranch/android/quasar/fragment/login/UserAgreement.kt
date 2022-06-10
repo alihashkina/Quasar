@@ -26,9 +26,6 @@ class UserAgreement : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//        bindingUserAgreement= DataBindingUtil.inflate(inflater, R.layout.user_agreement_fragment,container,false)
-//        val view: View = bindingUserAgreement.getRoot()
-//        return view
         bindingUserAgreement= DataBindingUtil.inflate(inflater, R.layout.user_agreement_fragment,container,false)
         return bindingUserAgreement.root
     }
@@ -36,7 +33,6 @@ class UserAgreement : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(UserAgreementViewModel::class.java)
-       // viewModel.loadUserAgreement(bindingUserAgreement.webUserAgreement)
         // TODO: Use the ViewModel
 
     }

@@ -12,7 +12,6 @@ import android.view.View.GONE
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.fragment.findNavController
 import com.bignerdranch.android.quasar.MainActivity
 import com.bignerdranch.android.quasar.R
 import com.bignerdranch.android.quasar.databinding.AuthorizationFragmentBinding

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.bignerdranch.android.quasar" >
+    package="com.bignerdranch.android.quasar">
+
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
-<!--    <uses-permission android:name="android.permission.CAMERA"/>-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -11,7 +14,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_quasar_logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Quasar" >
+        android:theme="@style/Theme.Quasar">
         <activity
             android:name=".fragment.login.SplashScreen"
             android:exported="true"
@@ -22,20 +25,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        <activity-->
-<!--            android:name="com.journeyapps.barcodescanner.CaptureActivity"-->
-<!--            android:screenOrientation="fullSensor"-->
-<!--            tools:replace="screenOrientation" />-->
     </application>
 
 </manifest>

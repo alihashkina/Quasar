@@ -9,7 +9,6 @@ import android.view.View.GONE
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.fragment.findNavController
 import com.bignerdranch.android.quasar.MainActivity
 import com.bignerdranch.android.quasar.R
 import com.bignerdranch.android.quasar.databinding.ApplicationFragmentBinding
@@ -56,11 +55,8 @@ lateinit var bindingApplication: ApplicationFragmentBinding
         }
 
         bindingApplication.constrApplication.setOnClickListener{
-//            findNavController().navigate(R.id.equipment)
-//            childFragmentManager.beginTransaction()
-//                .replace(R.id.containerViewMain, Equipment.newInstance())
-//                .addToBackStack(null)
-//                .commit()
+            MainActivity.fragmentMenu = "Equipment"
+            MainActivity.menu.selectedItemId =  R.id.listEquipment
             requireActivity().supportFragmentManager.beginTransaction().replace(R.id.containerView, Equipment.newInstance()).addToBackStack(null).commit()
         }
     }

@@ -50,73 +50,113 @@
                     android:id="@+id/scrollViewApplicationChat"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginEnd="28dp"
                     app:layout_constraintBottom_toTopOf="@+id/imageView7"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtApplicationChatBack">
+                    app:layout_constraintTop_toBottomOf="@+id/txtApplicationChatBack"
+                    app:layout_constraintVertical_bias="0.0">
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recyclerApplicationChat"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp" />
+                        android:layout_height="0dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginEnd="28dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
                 </ScrollView>
 
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="14dp"
-                    android:src="@drawable/ic_line_chat"
-                    app:layout_constraintBottom_toTopOf="@+id/linearLayoutApplicationChat"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent" />
-
                 <LinearLayout
-                    android:id="@+id/linearLayoutApplicationChat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="15dp"
+                    android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent">
-
-                    <EditText
-                        android:id="@+id/txtApplicationChatMsg"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textSize="15sp"
-                        android:paddingLeft="15dp"
-                        android:hint="Сообщение"
-                        android:textColorHint="@color/grey"
-                        android:background="@drawable/ic_msg_text"
-                        android:ems="10"
-                        android:gravity="center_vertical"
-                        android:inputType="textPersonName"
-                         />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/scrollViewApplicationChat"
+                    app:layout_constraintVertical_bias="0.991">
 
                     <ImageView
-                        android:id="@+id/imgApplicationChatMsgPhoto"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/imageView7"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_msg_photo" />
+                        android:paddingBottom="15dp"
+                        android:src="@drawable/ic_line_chat" />
 
-                    <ImageView
-                        android:id="@+id/imgApplicationChatMagPost"
+                    <LinearLayout
+                        android:id="@+id/linearPhoto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_msg_post" />
+                        android:gravity="start"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        app:maskColor="@color/transpgrey">
+
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_application_down" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerPhoto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_weight="1" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutApplicationChat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/txtApplicationChatMsg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/ic_msg_text"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="Сообщение"
+                            android:inputType="textMultiLine"
+                            android:lineSpacingExtra="5sp"
+                            android:paddingStart="20dp"
+                            android:paddingLeft="15dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="20dp"
+                            android:paddingBottom="5dp"
+                            android:textColorHint="@color/grey"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/imgApplicationChatMsgPhoto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_msg_photo" />
+
+                        <ImageView
+                            android:id="@+id/imgApplicationChatMagPost"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginBottom="8dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_msg_post" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
 
