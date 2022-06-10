@@ -1,13 +1,11 @@
-package com.bignerdranch.android.quasar.fragment.application
+package com.bignerdranch.android.quasar.ui.viewmodel.application
 
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bignerdranch.android.quasar.R
-import com.bignerdranch.android.quasar.databinding.ApplicationChatFragmentBinding
 import com.bignerdranch.android.quasar.databinding.PhotoItemBinding
 
 class PhotoAdapter(var photo: ArrayList<ImageView>): RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>() {
@@ -15,11 +13,11 @@ class PhotoAdapter(var photo: ArrayList<ImageView>): RecyclerView.Adapter<PhotoA
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): PhotoAdapter.PhotoViewHolder {
+    ): PhotoViewHolder {
         return PhotoViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.photo_item,parent,false))
     }
 
-    override fun onBindViewHolder(holder: PhotoAdapter.PhotoViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {
         holder.bind(photo[position])
     }
 
@@ -29,8 +27,8 @@ class PhotoAdapter(var photo: ArrayList<ImageView>): RecyclerView.Adapter<PhotoA
         var imgPhoto =  PhotoItemBinding.bind(view).imgPhoto
 
         fun bind(item: ImageView){
-            imgPhoto =item
+            imgPhoto = item
         }
-
     }
+
 }

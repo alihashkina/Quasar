@@ -2,15 +2,8 @@ package com.bignerdranch.android.quasar.fragment.application
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.Bitmap
-import android.net.Uri
-import android.os.Build
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.provider.MediaStore
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,23 +11,26 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bignerdranch.android.quasar.MainActivity
 import com.bignerdranch.android.quasar.R
 import com.bignerdranch.android.quasar.databinding.ApplicationChatFragmentBinding
-import com.bignerdranch.android.quasar.fragment.equipment.Equipment
+import com.bignerdranch.android.quasar.databinding.PhotoItemBinding
 import com.bignerdranch.android.quasar.ui.viewmodel.application.ApplicationChatViewModel
 import com.bignerdranch.android.quasar.ui.viewmodel.application.ApplicationChatViewModel.Companion.msgTrueFale
-import java.io.File
+import com.bignerdranch.android.quasar.ui.viewmodel.application.PhotoAdapter
+import android.R.attr.data
+
+
+
 
 class ApplicationChat : Fragment() {
 
     companion object {
         fun newInstance() = ApplicationChat()
         val REQUEST_CODE = 100
-        var photoImg: ArrayList<ImageView> = ArrayList(3)
+        var photoImg: ArrayList<ImageView> = ArrayList()
     }
 
 
@@ -76,9 +72,12 @@ bindingApplicationChat.imgApplicationChatMsgPhoto.setOnClickListener{
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+     data?.extras
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE){
             bindingApplicationChat.linearPhoto.visibility = VISIBLE
-            bindingApplicationChat.imageView2.setImageURI(data?.data!!)
+           // bindingApplicationChat.imageView2.setImageURI(data?.data)
+            //не работает
+            photoImg = arrayListOf(PhotoItemBinding.bind(view!!).imgPhoto)
           photoImg[0].setImageURI(data?.data)
             photoImg[1].setImageURI(data?.data)
             photoImg[2].setImageURI(data?.data)

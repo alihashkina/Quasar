@@ -17,7 +17,6 @@ import androidx.core.view.size
 import androidx.databinding.DataBindingUtil
 import com.bignerdranch.android.quasar.R
 import com.bignerdranch.android.quasar.databinding.CreatingApplicationDialogFragmentBinding
-import com.bignerdranch.android.quasar.fragment.application.QRScan.Companion.key
 import com.bignerdranch.android.quasar.fragment.equipment.Equipment
 import com.bignerdranch.android.quasar.ui.viewmodel.application.CreatingApplicationDialogViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
