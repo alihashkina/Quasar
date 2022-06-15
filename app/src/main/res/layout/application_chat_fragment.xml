@@ -87,10 +87,10 @@
 
                     <LinearLayout
                         android:id="@+id/linearPhoto"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:gravity="start"
                         android:orientation="horizontal"
                         android:padding="10dp"
@@ -99,7 +99,7 @@
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/recyclerPhoto"
-                            android:layout_width="100dp"
+                            android:layout_width="match_parent"
                             android:layout_height="100dp"
                             android:layout_weight="1"
                             android:orientation="horizontal" />

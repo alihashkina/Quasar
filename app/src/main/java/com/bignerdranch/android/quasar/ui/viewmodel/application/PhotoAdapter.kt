@@ -7,14 +7,19 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bignerdranch.android.quasar.R
 import com.bignerdranch.android.quasar.databinding.PhotoItemBinding
+import com.bumptech.glide.Glide
+import java.io.File
 
-class PhotoAdapter(var photo: ArrayList<ImageView>): RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>() {
+class PhotoAdapter(var photo: ArrayList<File>) :
+    RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): PhotoViewHolder {
-        return PhotoViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.photo_item,parent,false))
+        return PhotoViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.photo_item, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {
@@ -23,11 +28,16 @@ class PhotoAdapter(var photo: ArrayList<ImageView>): RecyclerView.Adapter<PhotoA
 
     override fun getItemCount(): Int = photo.size
 
-    inner class PhotoViewHolder(view: View): RecyclerView.ViewHolder(view){
-        var imgPhoto =  PhotoItemBinding.bind(view).imgPhoto
+    inner class PhotoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        var imgPhoto = PhotoItemBinding.bind(view).imgPhoto
+        var delete = PhotoItemBinding.bind(view).deletePhotoImageView
 
-        fun bind(item: ImageView){
-            imgPhoto = item
+        fun bind(item: File) {
+            Glide.with(itemView).load(item).into(imgPhoto)
+            delete.setOnClickListener {
+                photo.remove(item)
+                notifyDataSetChanged()
+            }
         }
     }
 
