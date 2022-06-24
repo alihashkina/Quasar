@@ -1,52 +1,83 @@
 package com.bignerdranch.android.quasar.fragment.application
 
-import android.app.Activity
-import android.content.Context
+import android.Manifest
 import android.content.Intent
-import android.graphics.Bitmap
-import android.net.Uri
-import android.os.Build
-import androidx.lifecycle.ViewModelProvider
+import android.content.pm.PackageManager
 import android.os.Bundle
-import android.provider.MediaStore
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
-import android.webkit.MimeTypeMap
-import android.widget.ImageView
+import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.net.toFile
-import androidx.core.net.toUri
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResultListener
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bignerdranch.android.quasar.MainActivity
 import com.bignerdranch.android.quasar.R
 import com.bignerdranch.android.quasar.databinding.ApplicationChatFragmentBinding
-import com.bignerdranch.android.quasar.fragment.equipment.Equipment
 import com.bignerdranch.android.quasar.ui.viewmodel.application.ApplicationChatViewModel
 import com.bignerdranch.android.quasar.ui.viewmodel.application.ApplicationChatViewModel.Companion.msgTrueFale
 import com.bignerdranch.android.quasar.ui.viewmodel.application.PhotoAdapter
-import java.io.*
 
 class ApplicationChat : Fragment() {
 
     companion object {
         fun newInstance() = ApplicationChat()
-        var PICK_IMAGE_MULTIPLE = 3
-        val REQUEST_CODE = 3
-        var photoUri: ArrayList<Uri> = ArrayList()
-        var photoImg: ArrayList<ImageView> = ArrayList()
+        // Переменные для доступа к галерее
+        const val WRITE_EXTERNAL_STORAGE = Manifest.permission.WRITE_EXTERNAL_STORAGE
+        const val READ_EXTERNAL_STORAGE = Manifest.permission.READ_EXTERNAL_STORAGE
     }
 
     private lateinit var viewModel: ApplicationChatViewModel
-    lateinit var bindingApplicationChat: ApplicationChatFragmentBinding
+    private lateinit var bindingApplicationChat: ApplicationChatFragmentBinding
+    private lateinit var requestPermissionLauncher: ActivityResultLauncher<String>
+    private var currentPermission = READ_EXTERNAL_STORAGE
+    private var resultImages:  MutableList<String>? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // Получим от нижнего фрагмента выбранные изображения
+        setFragmentResultListener("requestKeyImages") { key, bundle ->
+            val result = bundle.get("bundleKeyImages") as MutableMap<Int, String>
+            resultImages = result.values.toMutableList()
+            Log.i("My", "Result: $result")
+
+            if(resultImages != null){
+                bindingApplicationChat.linearPhoto.visibility = VISIBLE
+
+                bindingApplicationChat.recyclerPhoto.layoutManager =
+                    LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+                bindingApplicationChat.recyclerPhoto.adapter = PhotoAdapter(resultImages!!)
+            }
+        }
+
+        // Создадим переменную для получения разрешения, мы будем её использовать для запроса на разрешение
+        requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
+            if (isGranted) {
+                // Здесь выполняем код, когда разрешение предоставлено успешно
+                if (currentPermission == READ_EXTERNAL_STORAGE){
+                    Log.i("My", "Read first")
+                    currentPermission = WRITE_EXTERNAL_STORAGE
+                    checkPermission(WRITE_EXTERNAL_STORAGE)
+                }else if(currentPermission == WRITE_EXTERNAL_STORAGE){
+                    Log.i("My", "Write first")
+                    getPhoto()
+                }
+
+            } else {
+                // Если разрешение не предоставлено
+                Toast.makeText(requireContext(), "Предоставьте разрешение на чтение файлов", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -72,76 +103,36 @@ class ApplicationChat : Fragment() {
 
 
         bindingApplicationChat.imgApplicationChatMsgPhoto.setOnClickListener {
-            getPhoto()
+            checkPermission(READ_EXTERNAL_STORAGE)
+        }
+    }
+
+    // Метод для проверки разрешения, сюда кладём нужное разрешение.
+    private fun checkPermission(permission: String){
+
+        // Проверим есть ли разрешение permission в PackageManager (если разрешение предоставлено, то PERMISSION_GRANTED)
+        when {
+            ContextCompat.checkSelfPermission(requireContext(), permission) == PackageManager.PERMISSION_GRANTED -> {
+                // Здесь выполняем код, если разрешение на чтение есть
+                if (permission == READ_EXTERNAL_STORAGE){
+                    Log.i("My", "Check Read")
+                    currentPermission = WRITE_EXTERNAL_STORAGE
+                    checkPermission(WRITE_EXTERNAL_STORAGE)
+                }else if(permission == WRITE_EXTERNAL_STORAGE){
+                    Log.i("My", "Check Write")
+                    getPhoto()
+                }
+            }
+            else -> {
+                // Если разрешения нет, то получим его
+                requestPermissionLauncher.launch(permission)
+            }
         }
     }
 
     fun getPhoto() {
-        val intent = Intent(Intent.ACTION_PICK)
-        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
-        intent.type = "image/*"
-        startActivityForResult(
-            Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_MULTIPLE
-        )
-
+        PickImageDialog().show(requireActivity().supportFragmentManager,null)
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        //не работает
-        if (resultCode == Activity.RESULT_OK && requestCode == PICK_IMAGE_MULTIPLE) {
-            bindingApplicationChat.linearPhoto.visibility = VISIBLE
-
-            val photoList: ArrayList<File> = ArrayList()
-            for (i in 0 until data?.clipData?.itemCount!!) {
-                val item = data?.clipData?.getItemAt(i)?.uri
-                if (item != null && i < 3) {
-                    photoList.add(fileFromContentUri(context!!, item))
-                }
-            }
-            bindingApplicationChat.recyclerPhoto.layoutManager =
-                LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-            bindingApplicationChat.recyclerPhoto.adapter = PhotoAdapter(photoList)
-        }
-    }
-
-    fun fileFromContentUri(context: Context, contentUri: Uri): File {
-        // Preparing Temp file name
-        val fileExtension = getFileExtension(context, contentUri)
-        val fileName = "temp_file" + if (fileExtension != null) ".$fileExtension" else ""
-
-        // Creating Temp file
-        val tempFile = File(context.cacheDir, fileName)
-        tempFile.createNewFile()
-
-        try {
-            val oStream = FileOutputStream(tempFile)
-            val inputStream = context.contentResolver.openInputStream(contentUri)
-
-            inputStream?.let {
-                copy(inputStream, oStream)
-            }
-
-            oStream.flush()
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-
-        return tempFile
-    }
-
-    private fun getFileExtension(context: Context, uri: Uri): String? {
-        val fileType: String? = context.contentResolver.getType(uri)
-        return MimeTypeMap.getSingleton().getExtensionFromMimeType(fileType)
-    }
-
-    @Throws(IOException::class)
-    private fun copy(source: InputStream, target: OutputStream) {
-        val buf = ByteArray(8192)
-        var length: Int
-        while (source.read(buf).also { length = it } > 0) {
-            target.write(buf, 0, length)
-        }
-    }
 
 }

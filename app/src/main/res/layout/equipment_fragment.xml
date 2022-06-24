@@ -25,7 +25,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="20dp"
+                android:layout_margin="15dp"
                 android:layout_marginBottom="30dp"
                 android:background="@color/white"
                 android:orientation="vertical">
@@ -57,13 +57,16 @@
                     android:gravity="center"
                     android:text="Оборудование с тех. поддержкой"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp" />
 
                 <TextView
                     android:id="@+id/txtEquipmentDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="22dp"
+                    android:layout_marginStart="8dp"
                     android:text="Дата выпуска / Дата поставки"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -73,39 +76,53 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/ic_back_line_grey"
+                    android:layout_marginStart="8dp"
                     android:text="25.05.2022  · 25.07.2022"
                     android:textColor="@color/grey"
                     android:textSize="15sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_color"
+                    android:layout_marginTop="15dp"/>
 
                 <TextView
                     android:id="@+id/txtEquipmentTerm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_marginStart="8dp"
                     android:text="Срок окончания гарантии"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
+
 
                 <TextView
                     android:id="@+id/txtEquipmentTermText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/ic_back_line_grey"
+                    android:layout_marginStart="8dp"
                     android:text="25.10.2022"
                     android:textColor="@color/grey"
                     android:textSize="15sp" />
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_color"
+                    android:layout_marginTop="15dp"/>
+
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tabEquipment"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="32dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="19dp"
                     android:background="@drawable/ic_tab_back"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -116,7 +133,8 @@
                     app:tabIndicatorColor="@color/white"
                     app:tabIndicatorGravity="center"
                     app:tabSelectedTextColor="@color/black"
-                    app:tabTextColor="@color/black">
+                    app:tabTextColor="@color/black"
+                    app:tabTextAppearance="@android:style/TextAppearance">
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="match_parent"
@@ -130,7 +148,7 @@
                         android:layout_height="wrap_content"
                         android:text="Характер."
                         android:textSize="13sp"
-                        app:tabTextColor="@color/black" />
+                        app:tabTextColor="@color/black"/>
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="match_parent"
