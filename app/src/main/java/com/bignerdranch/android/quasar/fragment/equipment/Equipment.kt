@@ -1,5 +1,6 @@
 package com.bignerdranch.android.quasar.fragment.equipment
 
+import android.graphics.Color
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -17,6 +18,7 @@ import com.bignerdranch.android.quasar.fragment.application.CreatingApplicationD
 import com.bignerdranch.android.quasar.fragment.application.ListOfApplicationsEmpty
 import com.bignerdranch.android.quasar.fragment.settingprofile.GeneralPage
 import android.view.MenuItem
+import androidx.core.content.ContextCompat
 import com.bignerdranch.android.quasar.MainActivity.Companion.fragmentMenu
 import com.bignerdranch.android.quasar.ui.viewmodel.equipment.EquipmentViewModel
 
@@ -46,5 +48,38 @@ lateinit var bindingEquipment: EquipmentFragmentBinding
         }
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Табы
+        bindingEquipment.cardViewDescription.setOnClickListener {
+            bindingEquipment.cardViewDescription.cardElevation = 30f
+            bindingEquipment.cardViewFeatures.cardElevation = 0f
+            bindingEquipment.cardViewCertifications.cardElevation = 0f
+
+            bindingEquipment.cardViewDescription.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+            bindingEquipment.cardViewFeatures.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.tab_back))
+            bindingEquipment.cardViewCertifications.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.tab_back))
+        }
+        bindingEquipment.cardViewFeatures.setOnClickListener {
+            bindingEquipment.cardViewDescription.cardElevation = 0f
+            bindingEquipment.cardViewFeatures.cardElevation = 30f
+            bindingEquipment.cardViewCertifications.cardElevation = 0f
+
+            bindingEquipment.cardViewDescription.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.tab_back))
+            bindingEquipment.cardViewFeatures.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+            bindingEquipment.cardViewCertifications.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.tab_back))
+        }
+        bindingEquipment.cardViewCertifications.setOnClickListener {
+            bindingEquipment.cardViewDescription.cardElevation = 0f
+            bindingEquipment.cardViewFeatures.cardElevation = 0f
+            bindingEquipment.cardViewCertifications.cardElevation = 30f
+
+            bindingEquipment.cardViewDescription.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.tab_back))
+            bindingEquipment.cardViewFeatures.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.tab_back))
+            bindingEquipment.cardViewCertifications.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+        }
+
+    }
 
 }

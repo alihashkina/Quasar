@@ -114,6 +114,93 @@
                     android:background="@color/line_color"
                     android:layout_marginTop="15dp"/>
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/custom_tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="19dp"
+                    app:cardBackgroundColor="@color/tab_back"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardViewDescription"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="3dp"
+                            app:cardElevation="30dp">
+
+                            <TextView
+                                android:id="@+id/textDescription"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Описание"
+                                android:textColor="@color/black"
+                                android:textSize="13sp"
+                                />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardViewFeatures"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="1"
+                            android:visibility="visible"
+                            app:cardBackgroundColor="@color/tab_back"
+                            app:cardCornerRadius="3dp"
+                            app:cardElevation="0dp">
+
+                            <TextView
+                                android:id="@+id/textFeatures"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Характер."
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardViewCertifications"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="1"
+                            android:visibility="visible"
+                            app:cardBackgroundColor="@color/tab_back"
+                            app:cardCornerRadius="3dp"
+                            app:cardElevation="0dp">
+
+                            <TextView
+                                android:id="@+id/textCertifications"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Сертификаты"
+                                android:textColor="@color/black"
+                                android:textSize="13sp" />
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!--
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tabEquipment"
                     android:layout_width="match_parent"
@@ -164,7 +251,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="19dp" />
-
+                    -->
 
             </LinearLayout>
         </ScrollView>

@@ -13,6 +13,7 @@ import com.bignerdranch.android.quasar.MainActivity
 import com.bignerdranch.android.quasar.R
 import com.bignerdranch.android.quasar.databinding.ListEquipmentFragmentBinding
 import com.bignerdranch.android.quasar.databinding.ListEquipmentFragmentBindingImpl
+import com.bignerdranch.android.quasar.fragment.settingprofile.GeneralPage
 import com.bignerdranch.android.quasar.ui.viewmodel.equipment.ListEquipmentViewModel
 
 class ListEquipment : Fragment() {
@@ -36,6 +37,11 @@ class ListEquipment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ListEquipmentViewModel::class.java)
         MainActivity.menu.visibility = VISIBLE
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
     }
 

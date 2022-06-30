@@ -1,7 +1,9 @@
 package com.bignerdranch.android.quasar.fragment.application
 
 import android.content.ContentResolver
+import android.content.res.ColorStateList
 import android.database.Cursor
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.provider.CalendarContract.EventDays.query
@@ -44,6 +46,10 @@ class PickImageDialog : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Чтобы окно можно было сделать с круглыми краями
+        val bottomSheet = view.parent as View
+        bottomSheet.backgroundTintList = ColorStateList.valueOf(Color.TRANSPARENT)
+        //
 
         binding.done.setOnClickListener {
             // Передадим массив с фото в предыдуший фрагмент
@@ -87,7 +93,5 @@ class PickImageDialog : BottomSheetDialogFragment() {
         super.onDestroy()
         _binding = null
     }
-
-    override fun getTheme() = R.style.AppBottomSheetDialogTheme
 
 }
